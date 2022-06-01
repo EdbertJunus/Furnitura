@@ -1,7 +1,7 @@
 <%-- Connect to database --%>
 <%@page import="java.sql.*"%>
 
-<%
+<%!
     public static final class Connect{
         private Connection con;
         private Statement st;
