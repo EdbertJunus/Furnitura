@@ -1,0 +1,17 @@
+nav {
+  -webkit-box-shadow: 0 4px 11px -8px #999;
+  -moz-box-shadow: 0 4px 11px -8px #999;
+  box-shadow: 0 4px 11px -8px #999;
+}
+
+.navbar-brand {
+  margin-right: 50px;
+}
+
+.active {
+  font-weight: 600;
+}
+
+.active > .nav-link {
+  border-bottom: 3px solid black;
+}
