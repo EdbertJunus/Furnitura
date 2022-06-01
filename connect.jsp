@@ -11,7 +11,7 @@
         private Connect(){
             final String username = "root";
             final String password = "";
-            final String database = "furnitura_database"
+            final String database = "furnitura_database";
             final String host = "localhost";
             final String connection = String.format("jdbc:mysql://%s/%s", host, database);
 
