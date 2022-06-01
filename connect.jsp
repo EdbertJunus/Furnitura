@@ -1,8 +1,8 @@
 <%-- Connect to database --%>
 <%@page import="java.sql.*"%>
 
-<%
-    public static final class Connect{
+<%!
+    public static final class Connect {
         private Connection con;
         private Statement st;
         private ResultSet rs;
@@ -11,7 +11,7 @@
         private Connect(){
             final String username = "root";
             final String password = "";
-            final String database = "furnitura_database"
+            final String database = "furnitura_database";
             final String host = "localhost";
             final String connection = String.format("jdbc:mysql://%s/%s", host, database);
 
@@ -39,7 +39,7 @@
             }catch(Exception e){
                 e.printStackTrace();
             }
-
+            
             return rs;
         }
 
