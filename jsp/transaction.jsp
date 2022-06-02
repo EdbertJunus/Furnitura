@@ -1,6 +1,6 @@
 <%@page import="java.sql.*"%>
-<%@include file="connect.jsp"%>
-<%@ include file="jsp/header.jsp" %>
+<%@include file="../db/connect.jsp"%>
+<%@include file="header.jsp" %>
 
 <!DOCTYPE html>
 <html lang="en">
