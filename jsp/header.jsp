@@ -15,11 +15,13 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/header.css" />
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/footer.css" />
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/product.css" />
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/productList.css" />
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a id="nav-logo" class="navbar-brand" href="#">Furnitura</a>
+        <a id="nav-logo" class="navbar-brand" href="<%=request.getContextPath()%>/index.jsp">Furnitura</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -35,10 +37,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#"> Home </a>
+              <a class="nav-link" href="<%=request.getContextPath()%>/index.jsp">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Product List</a>
+              <a class="nav-link" href="<%=request.getContextPath()%>/jsp/productList.jsp">Product List</a>
             </li>
           </ul>
           <div class="navbar-text">
