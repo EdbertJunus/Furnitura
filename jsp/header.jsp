@@ -13,12 +13,13 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/header.css" />
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/footer.css" />
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Furnitura</a>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a id="nav-logo" class="navbar-brand" href="#">Furnitura</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -37,18 +38,12 @@
               <a class="nav-link" href="#"> Home </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="#">Product List</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact Us</a>
             </li>
           </ul>
           <div class="navbar-text">
-            <a class="nav-link" href="#">
-              <button type="button" class="btn btn-outline-primary">Login</button>
+            <a class="nav-link login" href="#">
+              <button type="button" class="btn">LOGIN</button>
             </a>
           </div>
         </div>

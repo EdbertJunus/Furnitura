@@ -52,7 +52,7 @@
       <span class="sr-only">Next</span>
     </button>
   </div>
-  <section class="container-fluid about-us">
+  <section class="container about-us">
     <h1 class="text-title">About Us</h1>
     <p class="text-center">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quibusdam
@@ -60,6 +60,63 @@
       veniam cumque atque, reprehenderit harum explicabo perferendis.
       Temporibus, sit nulla.
     </p>
+  </section>
+  <section class="container product-category">
+    <h1 class="text-title">Product Category</h1>
+    <div class="category-wrapper">
+      <div class="card category-item">
+        <img src="assets/livingroom.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <div class="item-title">Living Room</div>
+          <p class="card-text">Sofa, Living Table, TV Stand</p>
+        </div>
+      </div>
+      <div class="card category-item">
+        <img src="assets/kitchen.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <div class="item-title">Kitchen</div>
+          <p class="card-text">Stove, Sink, Oven</p>
+        </div>
+      </div>
+      <div class="card category-item">
+        <img src="assets/bathroom.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <div class="item-title">Bath Room and Laundry</div>
+          <p class="card-text">Bathtub, Shower, Sink, Wardrobe, Laundry</p>
+        </div>
+      </div>
+      <div class="card category-item">
+        <img src="assets/bedroom.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <div class="item-title">Bed Room</div>
+          <p class="card-text">Bed, Bedside tables, Chest of drawers</p>
+        </div>
+      </div>
+      <div class="card category-item">
+        <img src="assets/tablechair.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <div class="item-title">Table and Chairs</div>
+          <p class="card-text">Console Tables, Writing Desk, Stools</p>
+        </div>
+      </div>
+      <div class="card category-item">
+        <img src="assets/wardrobe.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <div class="item-title">Storage Case and Wardrobe</div>
+          <p class="card-text">Bookcase, Storage Walls, Sideboards</p>
+        </div>
+      </div>
+      <div class="card category-item">
+        <img src="assets/homeappliance.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <div class="item-title">Home Appliance</div>
+          <p class="card-text">Water Dispencer, Electric Fan, Kettle</p>
+        </div>
+      </div>
+    </div>
+    <a class="product-list-link" href="#ProductList">
+      <button class="btn btn-primary">See All Product</button>
+    </a>
   </section>
 </div>
 <%@ include file="html/footer.html" %>
