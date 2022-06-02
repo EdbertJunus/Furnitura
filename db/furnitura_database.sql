@@ -43,6 +43,7 @@ CREATE TABLE `cart` (
 
 CREATE TABLE `furniture` (
   `FurnitureId` int(11) NOT NULL,
+  `FurnitureName` varchar(255) NOT NULL,
   `FurnitureCategory` varchar(255) NOT NULL,
   `FurnitureDescription` varchar(255) NOT NULL,
   `FurnitureImage` varchar(255) NOT NULL,
