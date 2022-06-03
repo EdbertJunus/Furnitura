@@ -35,3 +35,15 @@ nav {
   color: black;
   outline: none;
 }
+
+.nav-right .nav-link {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 992px) {
+  .nav-link {
+    width: fit-content;
+    text-align: center;
+    margin: 10px auto;
+  }
+}

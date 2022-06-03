@@ -1,4 +1,7 @@
 <%@ page import="java.util.*" %>
+<%@page import="java.sql.*"%>
+<%@include file="../db/connect.jsp"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,10 +47,56 @@
               <a class="nav-link" href="<%=request.getContextPath()%>/jsp/productList.jsp">Product List</a>
             </li>
           </ul>
-          <div class="navbar-text">
-            <a class="nav-link login" href="#">
-              <button type="button" class="btn">LOGIN</button>
-            </a>
+          <div class="navbar-text d-flex flex-column flex-lg-row nav-right ">
+            <%
+                Connect con = Connect.getConnection();
+                String query = "SELECT * FROM users";
+                ResultSet rs = con.executeQuery(query);
+
+                //while(rs.next()){
+
+                //if(rs.getString("UserRole").equals("Member")){
+                //    session.setAttribute("userRole", rs.getString("UserRole"));
+                //    session.setAttribute("userName", rs.getString("UserName"));
+                //  }
+                //}
+                
+                String role = (String)session.getAttribute("userRole");
+                String name = (String)session.getAttribute("userName");
+                
+                if(role == null){
+            %>
+                  <a class="nav-link login" href="#">
+                    <button type="button" class="btn">LOGIN</button>
+                  </a>
+            <%
+                }
+                else{
+            %>
+                <a class="nav-link" href="#">
+                Hello, <%= name%>
+                </a>
+                <a class="nav-link" href="#">
+                  Account
+                </a>
+                <% 
+                  if(role.equals("Member")){
+                %>
+                  <a class="nav-link" href="#">
+                    View Cart
+                  </a>
+                <%
+                  }
+                %>
+                <a class="nav-link" href="#">
+                  View Transaction
+                </a>
+                <a class="nav-link" href="jsp/logout.jsp">
+                  Logout
+                </a>
+            <%
+                }
+            %>
           </div>
         </div>
       </nav>

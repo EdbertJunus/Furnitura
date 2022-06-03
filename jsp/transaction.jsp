@@ -1,5 +1,3 @@
-<%@page import="java.sql.*"%>
-<%@include file="../db/connect.jsp"%>
 <%@include file="header.jsp" %>
     <section class="content transaction">
         <span class="feature-title">
@@ -22,10 +20,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <%
-                        Connect con = Connect.getConnection();
-                        String query = "SELECT * FROM transaction";
-                        ResultSet rs = con.executeQuery(query);
+                    <%  
+                        //Header already has below variable, so just reuse
+                        //Connect con = Connect.getConnection();
+                        query = "SELECT * FROM transaction";
+                        rs = con.executeQuery(query);
     
                         while(rs.next()){
                     %>
