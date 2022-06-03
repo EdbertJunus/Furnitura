@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/header.css" />
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/footer.css" />
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/transaction.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/product.css" />
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/productList.css" />
   </head>
