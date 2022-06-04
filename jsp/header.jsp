@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/transaction.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/product.css" />
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/productList.css" />
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/productDetails.css" />
   </head>
   <body>
     <header>
@@ -53,18 +54,18 @@
                 String query = "SELECT * FROM users";
                 ResultSet rs = con.executeQuery(query);
 
-                //while(rs.next()){
+                while(rs.next()){
 
-                //if(rs.getString("UserRole").equals("Member")){
-                //    session.setAttribute("userRole", rs.getString("UserRole"));
-                //    session.setAttribute("userName", rs.getString("UserName"));
-                //  }
-                //}
+                if(rs.getString("UserRole").equals("Member")){
+                    session.setAttribute("userRole", rs.getString("UserRole"));
+                    session.setAttribute("userName", rs.getString("UserName"));
+                  }
+                }
                 
-                String role = (String)session.getAttribute("userRole");
-                String name = (String)session.getAttribute("userName");
+                String userRole = (String)session.getAttribute("userRole");
+                String userName = (String)session.getAttribute("userName");
                 
-                if(role == null){
+                if(userRole == null){
             %>
                   <a class="nav-link login" href="#">
                     <button type="button" class="btn">LOGIN</button>
@@ -74,13 +75,13 @@
                 else{
             %>
                 <a class="nav-link" href="#">
-                Hello, <%= name%>
+                Hello, <%=userName%>
                 </a>
                 <a class="nav-link" href="#">
                   Account
                 </a>
                 <% 
-                  if(role.equals("Member")){
+                  if(userRole.equals("Member")){
                 %>
                   <a class="nav-link" href="#">
                     View Cart
