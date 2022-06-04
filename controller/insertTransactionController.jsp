@@ -4,7 +4,7 @@
 <%
 
     // Get Values -> Nanti tinggal update via detail page
-    String transactionStatus = request.getParameter("transactionProcess");
+    String transactionStatus = "False";
     
     // Get Date
     Date date = new Date();
