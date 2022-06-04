@@ -82,7 +82,7 @@
                 <% 
                   if(role.equals("Member")){
                 %>
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="productDetails.jsp">
                     View Cart
                   </a>
                 <%
