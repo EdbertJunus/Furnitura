@@ -1,0 +1,44 @@
+footer {
+  background-color: #f6eabe;
+}
+
+footer * {
+  margin-bottom: 0;
+}
+
+footer .container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 50px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+}
+
+.contact-item i {
+  margin-right: 10px;
+}
+
+.footer-menu {
+  display: flex;
+}
+
+.footer-menu > span > a {
+  text-decoration: none;
+  color: black;
+  margin-right: 20px;
+}
+.footer-menu > span:hover > a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
