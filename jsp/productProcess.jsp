@@ -1,11 +1,12 @@
-<%@page import="java.util.*"%>
+<%@page import="java.sql.*"%>
+<%@include file="../db/connect.jsp"%>
 
 <%
   int id = Integer.parseInt(request.getParameter("id"));
-
-  Cookie id_cookie = new Cookie("id_cookie", id + "");
-  id_cookie.setMaxAge(24 * 60 * 60);
-  response.addCookie(id_cookie);
-
   out.println(id);
+
+  Connect con = Connect.getConnection();
+  String query = "INSERT INTO mycart (UserId, FurnitureId) VALUES (1, " + id + ")";
+  con.executeUpdate(query);
+  response.sendRedirect("productList.jsp");
 %>

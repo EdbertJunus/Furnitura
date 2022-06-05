@@ -11,15 +11,12 @@
   <body>
     <div class="productDetail">
       <div class="productDetail__left">
-        <img src="../assets/tablechair.jpg" alt="" />
-        <p>Rp. 1,790,000</p>
+        <img src="${param.img}" alt="" />
+        <p>Rp. ${param.price}</p>
       </div>
       <div class="productDetail__right">
-        <h2>Wooden Chair</h2>
-        <p>
-          The best chair made out your dad's wood. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Esse, tempore.
-        </p>
+        <h2>${param.name}</h2>
+        <p>${param.desc}</p>
       </div>
       <button class="productDetail__btn">Add to Cart</button>
       <button class="productDetail__btn show">Remove</button>
