@@ -1,4 +1,10 @@
-/* Content */
+Content
+.content {
+  flex: 1 1 auto;
+  height: 100%;
+  padding: 0 120px;
+  overflow-y: auto;
+}
 
 .feature-title {
   display: inline-block;
@@ -6,7 +12,7 @@
 }
 
 .feature-title > hr {
-  background-color: #69707f;
+  background-color: #343a40;
   height: 2px;
   border: 0;
   margin-bottom: 10px;
@@ -49,8 +55,42 @@
 }
 
 .table-item a {
-  color: black;
+  color: #343a40;
   font-weight: bold;
+  text-decoration: underline;
+}
+
+.table-wrapper {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.transaction-table {
+  table-layout: fixed;
+  width: 100%;
+  padding: 10px;
+  border-collapse: collapse;
+}
+
+.transaction-table th {
+  background-color: #343a40;
+  color: white;
+  padding: 10px;
+}
+
+.transaction-table td {
+  background-color: white;
+  color: black;
+  padding: 10px;
+}
+
+.table-item {
+  text-align: center;
+  border-bottom: 0.5px solid #7e838b;
+}
+
+.table-item a {
+  color: #343a40;
   text-decoration: underline;
 }
 
@@ -61,6 +101,41 @@
   width: 100%;
   padding: 20px 120px;
   overflow-y: auto;
-  flex: 1 1 auto;
   height: 100vh;
+}
+
+.transaction-detail {
+  padding-bottom: 30px;
+}
+
+.transaction-detail .transaction-table {
+  table-layout: auto;
+  width: 100%;
+}
+
+/* Items */
+.image-item > img {
+  object-fit: contain;
+  width: 200px;
+  height: 200px;
+} 
+
+.total-price {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.total-price > p {
+  text-align: right;
+}
+
+.btn-success {
+  background-color: #218838;
+  border-radius: 5px;
+  border: none;
+  width: fit-content;
+  margin-top: 10px;
+  padding: 5px 10px;
 }
