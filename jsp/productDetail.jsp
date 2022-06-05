@@ -21,8 +21,8 @@
           consectetur adipisicing elit. Esse, tempore.
         </p>
       </div>
-      <button class="productDetail__btn show">Add to Cart</button>
-      <button class="productDetail__btn">Remove</button>
+      <button class="productDetail__btn">Add to Cart</button>
+      <button class="productDetail__btn show">Remove</button>
     </div>
   </body>
 </html>
