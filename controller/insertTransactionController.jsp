@@ -41,6 +41,6 @@
 		out.println(query2);
 		con2.executeUpdate(query2);
 
-        //response.sendRedirect("../jsp/transaction.jsp");
+        // response.sendRedirect("../jsp/transaction.jsp");
     }
 %>
