@@ -1,4 +1,4 @@
-<%@ page import="java.util.*" %>
+<%@page import="java.util.*" %>
 <%@page import="java.sql.*"%>
 <%@include file="../db/connect.jsp"%>
 
@@ -22,6 +22,10 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/product.css" />
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/productList.css" />
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/productDetails.css" />
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/profile.css" />
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/change-pwd.css" />
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/register.css" />
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/login.css" />
   </head>
   <body>
     <header>

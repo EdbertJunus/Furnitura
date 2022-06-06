@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2022 at 04:46 PM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.7
+-- Generation Time: Jun 06, 2022 at 05:38 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -51,6 +51,14 @@ CREATE TABLE `furniture` (
   `FurnitureQuantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `furniture`
+--
+
+INSERT INTO `furniture` (`FurnitureId`, `FurnitureName`, `FurnitureCategory`, `FurnitureDescription`, `FurnitureImage`, `FurniturePrice`, `FurnitureQuantity`) VALUES
+(1, 'Meja Makan', 'Meja', 'Ini adalah meja makan', '../assets/tablechair.jpg', 10000, 2),
+(2, 'Gaming Chair', 'Chair', 'Ini adalah gaming chair', '../assets/kitchen.jpg', 20000, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -63,6 +71,14 @@ CREATE TABLE `transaction` (
   `TransactionStatus` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `transaction`
+--
+
+INSERT INTO `transaction` (`TransactionId`, `TransactionDate`, `TransactionStatus`) VALUES
+(1, '2022-06-03', 'False'),
+(2, '2022-06-05', 'True');
+
 -- --------------------------------------------------------
 
 --
@@ -74,7 +90,8 @@ CREATE TABLE `users` (
   `UserName` varchar(255) NOT NULL,
   `UserEmail` varchar(255) NOT NULL,
   `UserPassword` varchar(255) NOT NULL,
-  `UserRole` varchar(255) NOT NULL
+  `UserRole` varchar(255) NOT NULL,
+  `UserStatus` varchar(255) NOT NULL DEFAULT 'not_loggedin'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -115,19 +132,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `furniture`
 --
 ALTER TABLE `furniture`
-  MODIFY `FurnitureId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `FurnitureId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `TransactionId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `TransactionId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
