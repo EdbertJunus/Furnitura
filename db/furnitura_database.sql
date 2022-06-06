@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2022 at 05:38 PM
+-- Generation Time: Jun 06, 2022 at 06:59 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -62,6 +62,18 @@ INSERT INTO `furniture` (`FurnitureId`, `FurnitureName`, `FurnitureCategory`, `F
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mycart`
+--
+
+CREATE TABLE `mycart` (
+  `UserId` int(11) NOT NULL,
+  `FurnitureId` int(11) NOT NULL,
+  `CartId` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `transaction`
 --
 
@@ -95,6 +107,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`UserId`, `UserName`, `UserEmail`, `UserPassword`, `UserRole`, `UserStatus`) VALUES
+(6, 'Nael', 'naelj15@gmail.com', 'nael123', 'Member', 'logged_in');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -111,6 +130,12 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `furniture`
   ADD PRIMARY KEY (`FurnitureId`);
+
+--
+-- Indexes for table `mycart`
+--
+ALTER TABLE `mycart`
+  ADD PRIMARY KEY (`CartId`);
 
 --
 -- Indexes for table `transaction`
@@ -135,6 +160,12 @@ ALTER TABLE `furniture`
   MODIFY `FurnitureId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `mycart`
+--
+ALTER TABLE `mycart`
+  MODIFY `CartId` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
@@ -144,7 +175,7 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

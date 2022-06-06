@@ -16,14 +16,21 @@
             </div>
             <div class="profile-content">
                 <%
-                    
+                    String email = (String)session.getAttribute("userEmail");
+                    String query_select = String.format("SELECT * FROM users WHERE UserEmail = ('%s')", email);
+                    rs = con.executeQuery(query_select);
+    
+                    while(rs.next()){
                 %>
-                <p>Name Placeholder</p>
-                <p>Email Placeholder</p>
-                <p>Role Placeholder</p>
+                <p><%= rs.getString("UserName")%></p>
+                <p><%= rs.getString("UserEmail")%></p>
+                <p><%= rs.getString("UserRole")%></p>
+                <%
+                    }
+                %>
             </div>
         </div>
-        <button><a href="change-password.jsp?UserId=<%= rs.getInt("UserId")%>">Change Password</a></button>
+        <button><a href="change-password.jsp">Change Password</a></button>
     </div>
 
 </section>

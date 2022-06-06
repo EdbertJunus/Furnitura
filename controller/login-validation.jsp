@@ -45,18 +45,19 @@
         // Check if email is in database
         response.sendRedirect("../jsp/login.jsp?err=Email is not registered!");
     }
-
     // Validate Password
     else if (pwd == ""){
         response.sendRedirect("../jsp/login.jsp?err=Password Cannot be Empty!");
     }
     else if(rs.getString("UserPassword").equals(pwd) == false){
-        // Check if password in database
+        // Check if password in database is correct
         response.sendRedirect("../jsp/login.jsp?err=Password Incorrect!");
     }
     else{
-    // Change user status in database
+        // Change user status in database
         String query_update = String.format("UPDATE users SET UserStatus = ('%s') WHERE UserEmail = ('%s')", "logged_in", email);
+        session.setAttribute("userRole", rs.getString("UserRole"));
+        session.setAttribute("userEmail", rs.getString("UserEmail"));
         con.executeUpdate(query_update);
         response.sendRedirect("../index.jsp");
 

@@ -27,6 +27,9 @@
             <div class="login-content">
                 <button type="submit">Login</button>
             </div>
+
+            <!-- Redirect to register -->
+            <a href="register.jsp" id="redirect-register">Don't have account? Register!</a>
         </div>
     </form>
     <%

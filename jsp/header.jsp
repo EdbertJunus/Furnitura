@@ -71,7 +71,7 @@
                 
                 if(userRole == null){
             %>
-                  <a class="nav-link login" href="#">
+                  <a class="nav-link login-btn" href="#">
                     <button type="button" class="btn">LOGIN</button>
                   </a>
             <%

@@ -8,9 +8,6 @@
       </span>
     
     <!-- Change Password -->
-    <%
-        String transId = request.getParameter("TransactionId");
-    %>
     <div class="changepwd-container">
 
         <!-- Old Password -->
@@ -33,7 +30,7 @@
 
         <!-- Button Register -->
         <div class="changepwd-content">
-            <button><a href="../controller/changepwd-validation.jsp?UserId=<%= transId%>">Change Password</a></button>
+            <button><a href="../controller/changepwd-validation.jsp">Change Password</a></button>
         </div>
     </div>
     
