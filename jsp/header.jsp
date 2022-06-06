@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/product.css" />
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/productList.css" />
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/productDetails.css" />
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/login.css" />
   </head>
   <body>
     <header>
@@ -83,7 +84,7 @@
                 <% 
                   if(userRole.equals("Member")){
                 %>
-                  <a class="nav-link" href="productDetails.jsp">
+                  <a class="nav-link" href="<%=request.getContextPath()%>/jsp/productDetails.jsp">
                     View Cart
                   </a>
                 <%

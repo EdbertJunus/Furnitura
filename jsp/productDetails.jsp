@@ -11,6 +11,7 @@
     boolean hasData = false;
     while(rs.next()) {
       hasData = true;
+      int id = rs.getInt("FurnitureId");
       String name = rs.getString("FurnitureName");
       String img = rs.getString("FurnitureImage");
       String desc = rs.getString("FurnitureDescription");
@@ -20,6 +21,7 @@
       totalPrice += price;
   %>
       <jsp:include page="productDetail.jsp">
+        <jsp:param name="id" value="<%=id%>" />
         <jsp:param name="name" value="<%=name%>" />
         <jsp:param name="img" value="<%=img%>" />
         <jsp:param name="desc" value="<%=desc%>" />
@@ -38,7 +40,7 @@
     }
   %>
 
-  <form class="productDetails__form show" action="checkoutProcess.jsp" method="POST">
+  <form class="productDetails__form show" action="<%=request.getContextPath()%>/controller/insertTransactionController.jsp" method="GET">
     <div class="productDetails__checkoutBox">
       <h4><%=totalItem%> item(s)</h4>
       <p class="productDetails__priceTitle">Price:</p>

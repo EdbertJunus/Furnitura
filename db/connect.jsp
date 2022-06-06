@@ -53,5 +53,14 @@
 
             return st;
         }
+
+        // Close Connection
+        public void close() {
+          try {
+            st.close();
+          } catch(Exception e) {
+            e.printStackTrace();
+          }
+        }
     }
 %>

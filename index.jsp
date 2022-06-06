@@ -114,7 +114,7 @@
         </div>
       </div>
     </div>
-    <a class="product-list-link" href="#ProductList">
+    <a class="product-list-link" href="<%=request.getContextPath()%>/jsp/productList.jsp">
       <button class="btn btn-primary">See All Product</button>
     </a>
   </section>

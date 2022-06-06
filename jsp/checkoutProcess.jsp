@@ -11,7 +11,10 @@
 
     // USERID AKAN DISESUAIKAN NANTI
     String query = "DELETE FROM mycart WHERE UserId = 1";
+
+    query = "DELETE FROM mycart WHERE UserId = 1";
     con.executeUpdate(query);
+
     response.sendRedirect("transaction.jsp");
   }
 %>
