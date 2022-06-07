@@ -131,6 +131,10 @@ Content
   text-align: right;
 }
 
+.total-price > a {
+  text-decoration: none;
+}
+
 .btn-success {
   background-color: #218838;
   border-radius: 5px;

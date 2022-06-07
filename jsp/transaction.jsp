@@ -22,20 +22,28 @@
                 <tbody>
                     <%  
                         //Header already has below variable, so just reuse
-                        //Connect con = Connect.getConnection();
-                        query = "SELECT * FROM transaction";
+                        String email = (String)session.getAttribute("userEmail");
+                        query = String.format("SELECT t.TransactionId, t.TransactionDate, t.TransactionStatus FROM transaction t LEFT JOIN cart c ON t.TransactionId = c.TransactionId LEFT JOIN users u ON c.UserId = u.UserId WHERE u.UserEmail = ('%s')", email);
                         rs = con.executeQuery(query);
-    
+
+                        int transId = 0;
                         while(rs.next()){
+                            if(transId == rs.getInt("TransactionId")){
+                                continue;
+                            }
+                            else{
                     %>
-                    <tr class="table-item">
-                        <td><%= rs.getDate("TransactionDate")%></td>
-                        <td><%= rs.getString("TransactionStatus")%></td>
-                        <td>
-                            <a href="transaction-detail.jsp?TransactionId=<%= rs.getInt("TransactionId")%>">See Detail</a>
-                        </td>
-                    </tr>
+                            <tr class="table-item">
+                                <td><%= rs.getDate("TransactionDate")%></td>
+                                <td><%= rs.getString("TransactionStatus")%></td>
+                                <td>
+                                    <a href="transaction-detail.jsp?TransactionId=<%= rs.getInt("TransactionId")%>">See Detail</a>
+                                </td>
+                            </tr>
                     <%
+                            transId = rs.getInt("TransactionId");
+                            
+                        }
                     }
                     %>
                 </tbody>

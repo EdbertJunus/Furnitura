@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2022 at 03:32 PM
+-- Generation Time: Jun 07, 2022 at 04:06 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -41,7 +41,11 @@ CREATE TABLE `cart` (
 
 INSERT INTO `cart` (`FurnitureId`, `TransactionId`, `UserId`, `CartQuantity`, `CartTotal`) VALUES
 (1, 1, 6, 1, 10000),
-(2, 1, 6, 2, 40000);
+(2, 1, 6, 2, 40000),
+(1, 2, 7, 1, 10000),
+(2, 3, 7, 1, 20000),
+(1, 4, 7, 2, 20000),
+(2, 4, 7, 2, 40000);
 
 -- --------------------------------------------------------
 
@@ -88,7 +92,7 @@ CREATE TABLE `mycart` (
 CREATE TABLE `transaction` (
   `TransactionId` int(11) NOT NULL,
   `TransactionDate` date NOT NULL,
-  `TransactionStatus` varchar(255) NOT NULL
+  `TransactionStatus` varchar(255) NOT NULL DEFAULT 'False'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -97,7 +101,9 @@ CREATE TABLE `transaction` (
 
 INSERT INTO `transaction` (`TransactionId`, `TransactionDate`, `TransactionStatus`) VALUES
 (1, '2022-06-03', 'False'),
-(2, '2022-06-05', 'True');
+(2, '2022-06-05', 'True'),
+(3, '2022-06-07', 'False'),
+(4, '2022-06-08', 'false');
 
 -- --------------------------------------------------------
 
@@ -120,7 +126,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`UserId`, `UserName`, `UserEmail`, `UserPassword`, `UserRole`, `UserStatus`) VALUES
 (6, 'Nael', 'naelj15@gmail.com', 'nael123', 'Admin', 'not_loggedin'),
-(7, 'edbert', 'edbert@gmail.com', 'edbert321', 'Member', 'not_loggedin');
+(7, 'edbert', 'edbert@gmail.com', 'edbert321', 'Member', 'logged_in');
 
 --
 -- Indexes for dumped tables
@@ -178,7 +184,7 @@ ALTER TABLE `mycart`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `TransactionId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `TransactionId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
