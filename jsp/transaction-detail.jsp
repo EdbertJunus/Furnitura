@@ -20,12 +20,6 @@
                         String transId = request.getParameter("TransactionId");
                         String userId, furnitureId;
 
-                        userId = String.format("SELECT u.UserId FROM users u LEFT JOIN cart c ON u.UserId = c.UserId LEFT JOIN transaction t ON c.TransactionId = t.TransactionId WHERE t.TransactionId = ('%s')", transId);
-                        rs = con.executeQuery(userId);
-
-                        furnitureId = String.format("SELECT f.FurnitureId FROM furniture f LEFT JOIN cart c ON f.FurnitureId = c.FurnitureId LEFT JOIN transaction t ON c.TransactionId = t.TransactionId WHERE t.TransactionId = ('%s')", transId);
-                        rs = con.executeQuery(furnitureId);
-
                         query = String.format("SELECT f.FurnitureImage, f.FurnitureName, c.CartQuantity, f.FurniturePrice, c.CartTotal FROM furniture f LEFT JOIN cart c ON f.FurnitureId = c.FurnitureId LEFT JOIN transaction t ON t.TransactionId = c.TransactionId WHERE t.TransactionId = ('%s')", transId);
                         rs = con.executeQuery(query);
 
