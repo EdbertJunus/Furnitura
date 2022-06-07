@@ -56,6 +56,7 @@
     else{
         // Change user status in database
         String query_update = String.format("UPDATE users SET UserStatus = ('%s') WHERE UserEmail = ('%s')", "logged_in", email);
+        session.setAttribute("userName", rs.getString("UserName"));
         session.setAttribute("userRole", rs.getString("UserRole"));
         session.setAttribute("userEmail", rs.getString("UserEmail"));
         con.executeUpdate(query_update);
