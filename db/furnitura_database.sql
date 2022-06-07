@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2022 at 06:59 PM
+-- Generation Time: Jun 07, 2022 at 03:32 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -34,6 +34,14 @@ CREATE TABLE `cart` (
   `CartQuantity` int(11) NOT NULL,
   `CartTotal` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`FurnitureId`, `TransactionId`, `UserId`, `CartQuantity`, `CartTotal`) VALUES
+(1, 1, 6, 1, 10000),
+(2, 1, 6, 2, 40000);
 
 -- --------------------------------------------------------
 
@@ -111,7 +119,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`UserId`, `UserName`, `UserEmail`, `UserPassword`, `UserRole`, `UserStatus`) VALUES
-(6, 'Nael', 'naelj15@gmail.com', 'nael123', 'Member', 'logged_in');
+(6, 'Nael', 'naelj15@gmail.com', 'nael123', 'Admin', 'not_loggedin'),
+(7, 'edbert', 'edbert@gmail.com', 'edbert321', 'Member', 'not_loggedin');
 
 --
 -- Indexes for dumped tables
@@ -175,7 +184,7 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
