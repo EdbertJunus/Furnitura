@@ -2,24 +2,22 @@
 
 <div class="productDetails">
   <%
-    // USERID AKAN DISESUAIKAN NANTI
-    query = "SELECT * FROM furniture JOIN mycart ON furniture.FurnitureId = mycart.FurnitureId WHERE mycart.UserId = 1";
+    int userId = (Integer)session.getAttribute("userId");
+
+    query = String.format("SELECT * FROM furniture JOIN mycart ON furniture.FurnitureId = mycart.FurnitureId WHERE mycart.UserId = %d", userId);
     rs = con.executeQuery(query);
 
-    int totalItem = 0;
-    int totalPrice = 0;
     boolean hasData = false;
     while(rs.next()) {
       hasData = true;
+      int id = rs.getInt("FurnitureId");
       String name = rs.getString("FurnitureName");
       String img = rs.getString("FurnitureImage");
       String desc = rs.getString("FurnitureDescription");
       int price = rs.getInt("FurniturePrice");
-      
-      totalItem += 1;
-      totalPrice += price;
   %>
       <jsp:include page="productDetail.jsp">
+        <jsp:param name="id" value="<%=id%>" />
         <jsp:param name="name" value="<%=name%>" />
         <jsp:param name="img" value="<%=img%>" />
         <jsp:param name="desc" value="<%=desc%>" />
@@ -38,15 +36,27 @@
     }
   %>
 
-  <form class="productDetails__form show" action="checkoutProcess.jsp" method="POST">
-    <div class="productDetails__checkoutBox">
-      <h4><%=totalItem%> item(s)</h4>
+  <form class="productDetails__form" action="<%=request.getContextPath()%>/controller/insertTransactionController.jsp" method="GET">
+    <%
+      if(hasData) {
+    %>
+        <div class="productDetails__checkoutBox">
+    <%
+      } else {
+    %>
+        <div class="productDetails__checkoutBox hide">
+    <%
+      }
+    %>
+      <h4 id="productDetails__itemQty"></h4>
+      <div id="productDetails__priceList" class="productDetails__priceList"></div>
       <p class="productDetails__priceTitle">Price:</p>
-      <p class="productDetails__price">Rp. <%=totalPrice%></p>
-      <input type="hidden" name="totalPrice" value="<%=totalPrice%>">
+      <p id="productDetails__price" class="productDetails__price"></p>
       <button class="productDetails__btnCheckout" type="submit">Checkout</button>
     </div>
   </form>
 </div>
+
+<script src="<%=request.getContextPath()%>/js/productDetails.js"></script>
 
 <%@include file="../html/footer.html"%>

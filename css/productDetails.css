@@ -1,6 +1,6 @@
 .productDetails {
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 150px;
   display: flex;
   flex-direction: column;
   margin-left: 200px;
@@ -31,18 +31,14 @@
 }
 
 form.productDetails__form {
-  display: none;
+  display: block;
   position: absolute;
   right: 80px;
 }
 
-form.show {
-  display: block;
-}
-
 .productDetails__checkoutBox {
   width: 350px;
-  height: 250px;
+  height: fit-content;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 10px;
   display: flex;
@@ -51,13 +47,23 @@ form.show {
   align-items: center;
 }
 
+.hide {
+  display: none;
+}
+
 .productDetails__checkoutBox h4 {
+  margin-top: 40px;
   margin-bottom: 40px;
+}
+
+.productDetails__priceList p {
+  font-weight: bold;
 }
 
 .productDetails__checkoutBox p.productDetails__priceTitle {
   font-weight: bolder;
   font-size: large;
+  margin-top: 20px;
   margin-bottom: 0px !important;
 }
 
@@ -67,6 +73,7 @@ form.show {
 }
 
 .productDetails__btnCheckout {
+  margin-bottom: 40px;
   border: none;
   background-color: #03ac0e;
   color: white;
