@@ -38,7 +38,7 @@
 
     <form class="productDetails__form show" action="<%=request.getContextPath()%>/controller/insertTransactionController.jsp" method="GET">
       <div class="productDetails__checkoutBox">
-        <h4>HAHA item(s)</h4>
+        <h4 id="productDetails__itemQty"></h4>
         <div id="productDetails__priceList" class="productDetails__priceList"></div>
         <p class="productDetails__priceTitle">Price:</p>
         <p id="productDetails__price" class="productDetails__price"></p>

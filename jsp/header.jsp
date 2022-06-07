@@ -1,4 +1,4 @@
-<%@ page import="java.util.*" %>
+<%@page import="java.util.*" %>
 <%@page import="java.sql.*"%>
 <%@include file="../db/connect.jsp"%>
 
@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/product.css" />
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/productList.css" />
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/productDetails.css" />
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/profile.css" />
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/change-pwd.css" />
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/register.css" />
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/login.css" />
   </head>
   <body>
@@ -54,31 +57,23 @@
                 Connect con = Connect.getConnection();
                 String query = "SELECT * FROM users";
                 ResultSet rs = con.executeQuery(query);
-
-                while(rs.next()){
-
-                if(rs.getString("UserRole").equals("Member")){
-                    session.setAttribute("userRole", rs.getString("UserRole"));
-                    session.setAttribute("userName", rs.getString("UserName"));
-                  }
-                }
                 
                 String userRole = (String)session.getAttribute("userRole");
                 String userName = (String)session.getAttribute("userName");
                 
                 if(userRole == null){
             %>
-                  <a class="nav-link login" href="#">
+                  <a class="nav-link login-btn" href="<%=request.getContextPath()%>/jsp/login.jsp">
                     <button type="button" class="btn">LOGIN</button>
                   </a>
             <%
                 }
                 else{
             %>
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" style="pointer-events: none;">
                 Hello, <%=userName%>
                 </a>
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="<%=request.getContextPath()%>/jsp/profile.jsp">
                   Account
                 </a>
                 <% 
@@ -90,10 +85,10 @@
                 <%
                   }
                 %>
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="<%=request.getContextPath()%>/jsp/transaction.jsp">
                   View Transaction
                 </a>
-                <a class="nav-link" href="jsp/logout.jsp">
+                <a class="nav-link" href="<%=request.getContextPath()%>/jsp/logout.jsp">
                   Logout
                 </a>
             <%

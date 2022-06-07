@@ -11,6 +11,11 @@
   margin-bottom: 80px;
 }
 
+.carousel-item > img {
+  max-height: 500px;
+  object-fit: cover;
+}
+
 .text-title {
   text-align: center;
 }

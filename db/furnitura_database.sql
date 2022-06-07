@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2022 at 04:46 PM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.7
+-- Generation Time: Jun 07, 2022 at 04:06 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,6 +35,18 @@ CREATE TABLE `cart` (
   `CartTotal` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`FurnitureId`, `TransactionId`, `UserId`, `CartQuantity`, `CartTotal`) VALUES
+(1, 1, 6, 1, 10000),
+(2, 1, 6, 2, 40000),
+(1, 2, 7, 1, 10000),
+(2, 3, 7, 1, 20000),
+(1, 4, 7, 2, 20000),
+(2, 4, 7, 2, 40000);
+
 -- --------------------------------------------------------
 
 --
@@ -51,6 +63,26 @@ CREATE TABLE `furniture` (
   `FurnitureQuantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `furniture`
+--
+
+INSERT INTO `furniture` (`FurnitureId`, `FurnitureName`, `FurnitureCategory`, `FurnitureDescription`, `FurnitureImage`, `FurniturePrice`, `FurnitureQuantity`) VALUES
+(1, 'Meja Makan', 'Meja', 'Ini adalah meja makan', '../assets/tablechair.jpg', 10000, 2),
+(2, 'Gaming Chair', 'Chair', 'Ini adalah gaming chair', '../assets/kitchen.jpg', 20000, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mycart`
+--
+
+CREATE TABLE `mycart` (
+  `UserId` int(11) NOT NULL,
+  `FurnitureId` int(11) NOT NULL,
+  `CartId` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- --------------------------------------------------------
 
 --
@@ -60,8 +92,18 @@ CREATE TABLE `furniture` (
 CREATE TABLE `transaction` (
   `TransactionId` int(11) NOT NULL,
   `TransactionDate` date NOT NULL,
-  `TransactionStatus` varchar(255) NOT NULL
+  `TransactionStatus` varchar(255) NOT NULL DEFAULT 'False'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `transaction`
+--
+
+INSERT INTO `transaction` (`TransactionId`, `TransactionDate`, `TransactionStatus`) VALUES
+(1, '2022-06-03', 'False'),
+(2, '2022-06-05', 'True'),
+(3, '2022-06-07', 'False'),
+(4, '2022-06-08', 'false');
 
 -- --------------------------------------------------------
 
@@ -74,8 +116,17 @@ CREATE TABLE `users` (
   `UserName` varchar(255) NOT NULL,
   `UserEmail` varchar(255) NOT NULL,
   `UserPassword` varchar(255) NOT NULL,
-  `UserRole` varchar(255) NOT NULL
+  `UserRole` varchar(255) NOT NULL,
+  `UserStatus` varchar(255) NOT NULL DEFAULT 'not_loggedin'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`UserId`, `UserName`, `UserEmail`, `UserPassword`, `UserRole`, `UserStatus`) VALUES
+(6, 'Nael', 'naelj15@gmail.com', 'nael123', 'Admin', 'not_loggedin'),
+(7, 'edbert', 'edbert@gmail.com', 'edbert321', 'Member', 'logged_in');
 
 --
 -- Indexes for dumped tables
@@ -94,6 +145,12 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `furniture`
   ADD PRIMARY KEY (`FurnitureId`);
+
+--
+-- Indexes for table `mycart`
+--
+ALTER TABLE `mycart`
+  ADD PRIMARY KEY (`CartId`);
 
 --
 -- Indexes for table `transaction`
@@ -115,19 +172,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `furniture`
 --
 ALTER TABLE `furniture`
-  MODIFY `FurnitureId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `FurnitureId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `mycart`
+--
+ALTER TABLE `mycart`
+  MODIFY `CartId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `TransactionId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `TransactionId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

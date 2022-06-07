@@ -1,5 +1,5 @@
 <%@include file="../db/connect.jsp"%>
-<%@page import="java.io.*, java.util.Date, javax.servlet.*, java.text.*, java.sql.*"%>
+<%@page import="java.io.*, java.util.Date, javax.servlet.*, java.text.*, java.sql.*, java.util.*"%>
 
 <%
   int totalPrice = 1; //Integer.parseInt(request.getParameter("totalPrice"));
@@ -29,18 +29,22 @@
         out.println(transactionId);
       }
 
-      Connect con2 = Connect.getConnection();
-          String query2 = String.format("SELECT * FROM mycart WHERE UserId = %d", 1);
-          ResultSet rs2 = con.executeQuery(query2);
+      query = String.format("SELECT * FROM mycart WHERE UserId = %d", 1);
+      rs = con.executeQuery(query);
 
-      query2 = "";
-      while(rs2.next()) {
-          query2 += String.format("INSERT INTO cart VALUES (%d, %d, %d, %d, %d);", rs2.getInt("FurnitureId"), transactionId, 1, 1, totalPrice);
-          con2.executeUpdate(query2);
+	  Vector<String> queryList = new Vector<String>();
+      while(rs.next()) {
+          queryList.add(String.format("INSERT INTO cart VALUES (%d, %d, %d, %d, %d)", rs.getInt("FurnitureId"), transactionId, 1, 1, totalPrice));
       }
-      
-      //out.println(query2);
 
-      // response.sendRedirect("../jsp/transaction.jsp");
+	  for(int i = 0; i < queryList.size(); i++) {
+		  con.executeUpdate(queryList.get(i));
+	  }
+
+	  // Empty Mycart
+	  query = String.format("DELETE FROM mycart WHERE UserId = %d", 1);
+	  con.executeUpdate(query);
+      
+      response.sendRedirect("../jsp/transaction.jsp");
   }
 %>

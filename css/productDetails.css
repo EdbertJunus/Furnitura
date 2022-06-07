@@ -52,13 +52,18 @@ form.show {
 }
 
 .productDetails__checkoutBox h4 {
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 40px;
+}
+
+.productDetails__priceList p {
+  font-weight: bold;
 }
 
 .productDetails__checkoutBox p.productDetails__priceTitle {
   font-weight: bolder;
   font-size: large;
+  margin-top: 20px;
   margin-bottom: 0px !important;
 }
 
@@ -68,7 +73,7 @@ form.show {
 }
 
 .productDetails__btnCheckout {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   border: none;
   background-color: #03ac0e;
   color: white;
