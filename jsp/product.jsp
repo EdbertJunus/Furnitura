@@ -8,7 +8,19 @@
     </div>
     <div class="product__lower">
       <p>Rp. ${param.price}</p>
-      <button class="product__btnAddToCart" type="submit">Add to Cart</button>
+      <%
+        String userRole = (String)session.getAttribute("userRole");
+
+        if(userRole != null) {
+      %>
+          <button class="product__btnAddToCart" type="submit">Add to Cart</button>
+      <%
+        } else {
+      %>
+          <button class="product__btnAddToCart" type="button" disabled>Please Login</button>
+      <%
+        }
+      %>
     </div>
   </div>
 </form>

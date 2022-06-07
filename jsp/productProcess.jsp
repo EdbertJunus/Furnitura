@@ -6,17 +6,17 @@
 
   Connect con = Connect.getConnection();
 
-  // USERID AKAN DISESUAIKAN NANTI
-  String query = String.format("SELECT * FROM mycart WHERE UserId = %d", 1);
+  int userId = (Integer)session.getAttribute("userId");
+  String query = String.format("SELECT * FROM mycart WHERE UserId = %d", userId);
   ResultSet rs = con.executeQuery(query);
 
   int item = 0;
 
   if(rs.next() == false) {
-    query = String.format("INSERT INTO mycart (UserId, FurnitureId) VALUES (1, %d)", id);
+    query = String.format("INSERT INTO mycart (UserId, FurnitureId) VALUES (%d, %d)", userId, id);
     con.executeUpdate(query);
   } else {
-    query = String.format("SELECT * FROM mycart WHERE UserId = %d", 1);
+    query = String.format("SELECT * FROM mycart WHERE UserId = %d", userId);
     rs = con.executeQuery(query);
 
     while(rs.next()) {
@@ -28,8 +28,10 @@
     }
 
     if(item != 0) {
-      query = String.format("INSERT INTO mycart (UserId, FurnitureId) VALUES (1, %d)", id);
+      query = String.format("INSERT INTO mycart (UserId, FurnitureId) VALUES (%d, %d)", userId, id);
       con.executeUpdate(query);
     }
   }
+
+  response.sendRedirect("productList.jsp");
 %>

@@ -19,7 +19,7 @@
         <p>${param.desc}</p>
       </div>
       <button class="productDetail__btn">Add to Cart</button>
-      <form action="<%=request.getContextPath()%>/jsp/removeProductProcess.jsp">
+      <form action="<%=request.getContextPath()%>/jsp/removeProductProcess.jsp" method="GET">
         <input type="hidden" name="id" value="${param.id}">
         <button class="productDetail__btn show" type="submit">Remove</button>
       </form>

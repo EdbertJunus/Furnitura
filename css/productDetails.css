@@ -1,6 +1,6 @@
 .productDetails {
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 150px;
   display: flex;
   flex-direction: column;
   margin-left: 200px;
@@ -31,13 +31,9 @@
 }
 
 form.productDetails__form {
-  display: none;
+  display: block;
   position: absolute;
   right: 80px;
-}
-
-form.show {
-  display: block;
 }
 
 .productDetails__checkoutBox {
@@ -49,6 +45,10 @@ form.show {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.hide {
+  display: none;
 }
 
 .productDetails__checkoutBox h4 {
