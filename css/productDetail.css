@@ -44,6 +44,25 @@ img {
   width: 350px;
 }
 
+.productDetail__qty {
+  position: absolute;
+  right: 50px;
+  bottom: 140px;
+}
+
+.productDetail__qty input {
+  width: 50px;
+  padding-left: 5px;
+  height: 34px;
+}
+
+.productDetail__qty button {
+  border: none;
+  background-color: green;
+  color: white;
+  padding: 5px 10px;
+}
+
 .productDetail__btn {
   display: none;
   border: none;

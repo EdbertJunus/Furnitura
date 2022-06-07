@@ -19,10 +19,16 @@
         <p>${param.desc}</p>
       </div>
       <button class="productDetail__btn">Add to Cart</button>
-      <form action="<%=request.getContextPath()%>/jsp/removeProductProcess.jsp">
+      <form action="<%=request.getContextPath()%>/jsp/removeProductProcess.jsp" onclick="init()">
         <input type="hidden" name="id" value="${param.id}">
         <button class="productDetail__btn show" type="submit">Remove</button>
       </form>
+
+      <div class="productDetail__qty">
+        <input id="qty" class="qty" type="number" min="1" name="qty" value="1" />
+        <input id="price" class="price" type="hidden" name="price" value="${param.price}" />
+        <button id="btnSave" class="btnSave" type="button">Save</button>
+      </div>
     </div>
   </body>
 </html>
