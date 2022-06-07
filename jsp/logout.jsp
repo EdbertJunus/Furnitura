@@ -9,6 +9,7 @@
     String query = String.format("UPDATE users SET UserStatus = ('%s') WHERE UserEmail = ('%s')", "not_loggedin",email);
     con.executeUpdate(query);
 
+    session.removeAttribute("userId");
     session.removeAttribute("userRole");
     session.removeAttribute("userName");
     session.removeAttribute("userEmail");
