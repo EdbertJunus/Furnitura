@@ -12,24 +12,24 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="assets/banner2.jpg" class="d-block w-100" alt="..." />
+        <img src="assets/banner2.jpg" class="d-block w-100" alt="living_room" />
         <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
+          <h5>Buy our latest modern furniture</h5>
+          <p>We provide you with variety of furniture and category that you can choose from</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="assets/banner2.jpg" class="d-block w-100" alt="..." />
+        <img src="assets/banner1.jpg" class="d-block w-100" alt="kitchen" />
         <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
+          <h5>Kitchen Equipment</h5>
+          <p>Choose a full set of kitchen equipment with the latest technology</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="assets/banner2.jpg" class="d-block w-100" alt="..." />
+        <img src="assets/banner3.jpg" class="d-block w-100" alt="bedroom" />
         <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
+          <h5>Bedroom</h5>
+          <p>Fill your room with good furniture to make you feel better</p>
         </div>
       </div>
     </div>
@@ -55,10 +55,7 @@
   <section class="container about-us">
     <h1 class="text-title">About Us</h1>
     <p class="text-center">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quibusdam
-      facere, quas inventore laborum est magni consectetur omnis, illo ipsa
-      veniam cumque atque, reprehenderit harum explicabo perferendis.
-      Temporibus, sit nulla.
+      We are furnitura, we sells variety kinds of furniture and home equipment. We found that by providing a good home equipment and furniture, can enhance people's happines level and decrease stress
     </p>
   </section>
   <section class="container product-category">
@@ -114,7 +111,7 @@
         </div>
       </div>
     </div>
-    <a class="product-list-link" href="#ProductList">
+    <a class="product-list-link" href="<%=request.getContextPath()%>/jsp/productList.jsp">
       <button class="btn btn-primary">See All Product</button>
     </a>
   </section>
