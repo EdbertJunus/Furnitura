@@ -2,7 +2,6 @@
 <%@ page import="java.sql.*"%>
 <%@ include file="../db/connect.jsp"%>
 <%
-
     // Update User Status in database to not_loggeedin
     Connect con = Connect.getConnection();
     String email = (String)session.getAttribute("userEmail");

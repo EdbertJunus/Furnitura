@@ -88,7 +88,7 @@
                 <a class="nav-link" href="<%=request.getContextPath()%>/jsp/transaction.jsp">
                   View Transaction
                 </a>
-                <a class="nav-link" href="<%=request.getContextPath()%>/jsp/logout.jsp">
+                <a class="nav-link" href="<%=request.getContextPath()%>/controller/logoutController.jsp">
                   Logout
                 </a>
             <%

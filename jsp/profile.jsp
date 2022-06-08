@@ -30,7 +30,7 @@
                 %>
             </div>
         </div>
-        <button><a href="change-password.jsp">Change Password</a></button>
+        <button><a href="changePassword.jsp">Change Password</a></button>
     </div>
 
 </section>
