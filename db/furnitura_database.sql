@@ -68,8 +68,13 @@ CREATE TABLE `furniture` (
 --
 
 INSERT INTO `furniture` (`FurnitureId`, `FurnitureName`, `FurnitureCategory`, `FurnitureDescription`, `FurnitureImage`, `FurniturePrice`, `FurnitureQuantity`) VALUES
-(1, 'Meja Makan', 'Meja', 'Ini adalah meja makan', '../assets/tablechair.jpg', 10000, 2),
-(2, 'Gaming Chair', 'Chair', 'Ini adalah gaming chair', '../assets/kitchen.jpg', 20000, 5);
+(1, 'Sofa', 'Living Room', 'This striking sofa will be the perfect finishing touch.', '../assets/sofa.jpg', 4000000, 5),
+(2, 'Cupboard', 'Kitchen', 'Clean lines and on-trend colors give this cabinet.', '../assets/cupboard.jpg', 2000000, 5),
+(3, 'Wash Basin', 'Bath Room and Laundry', 'Sleek European inspired modern design.', '../assets/washbasin.jpg', 1000000, 5),
+(4, 'King Bed', 'Bed Room', 'Modernize your bedroom with the elegant design.', '../assets/bed.jpg', 4500000, 5),
+(5, 'Table and Chair Set', 'Table and Chairs', 'Beautifully simple, this set is a step above the rest.', '../assets/tableandchair.jpg', 6000000, 5),
+(6, 'Long Wardrobe', 'Storage Case and Wardrobe', 'Easy storage in three steps. Perfect for fitting.', '../assets/wardrobe.jpg', 3700000, 5),
+(7, 'Washing Machine', 'Home Appliance', 'It is a space-saving design for easy placement.', '../assets/washingmachine.jpg', 2500000, 5);
 
 -- --------------------------------------------------------
 
@@ -133,18 +138,18 @@ INSERT INTO `users` (`UserId`, `UserName`, `UserEmail`, `UserPassword`, `UserRol
 --
 
 --
+-- Indexes for table `furniture`
+--
+ALTER TABLE `furniture`
+  ADD PRIMARY KEY (`FurnitureId`);
+
+--
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
   ADD KEY `FurnitureId` (`FurnitureId`),
   ADD KEY `TransactionId` (`TransactionId`),
   ADD KEY `UserId` (`UserId`);
-
---
--- Indexes for table `furniture`
---
-ALTER TABLE `furniture`
-  ADD PRIMARY KEY (`FurnitureId`);
 
 --
 -- Indexes for table `mycart`
@@ -172,7 +177,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `furniture`
 --
 ALTER TABLE `furniture`
-  MODIFY `FurnitureId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `FurnitureId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `mycart`
