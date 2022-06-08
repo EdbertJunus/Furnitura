@@ -1,4 +1,4 @@
-<form action="productProcess.jsp" method="GET">
+<form action="<%=request.getContextPath()%>/controller/insertMycartController.jsp" method="GET">
   <div class="product">
     <input type="hidden" name="id" value="${param.id}" />
     <img src="${param.img}" alt="" />

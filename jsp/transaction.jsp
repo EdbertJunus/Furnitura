@@ -37,7 +37,7 @@
                                 <td><%= rs.getDate("TransactionDate")%></td>
                                 <td><%= rs.getString("TransactionStatus")%></td>
                                 <td>
-                                    <a href="transaction-detail.jsp?TransactionId=<%= rs.getInt("TransactionId")%>">See Detail</a>
+                                    <a href="transactionDetail.jsp?TransactionId=<%= rs.getInt("TransactionId")%>">See Detail</a>
                                 </td>
                             </tr>
                     <%
