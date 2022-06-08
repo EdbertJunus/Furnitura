@@ -1,4 +1,6 @@
 <%@include file="header.jsp" %>
+<%@include file="../controller/loginSessionController.jsp" %>
+
 <section class="content transaction transaction-detail">
         <span class="feature-title">
             <h2>Transactions Detail</h2>
@@ -46,12 +48,15 @@
                 </tbody>
             </table>
             <div class="total-price">
-                <%
+                <%  
                     if(transStatus.equals("False")){
                         %>
                         <p><b>Total : </b><%= grandTotal%></p>
-                        <a href="../controller/updateTransaction.jsp?TransactionId=<%= transactionId%>" class="btn-prime btn-success">Process</a>
                         <%
+                            if(userRole.equals("Admin")){
+                        %>
+                        <a href="../controller/updateTransaction.jsp?TransactionId=<%= transactionId%>" class="btn-prime btn-success">Process</a>
+                        <%}
                     }
                     else if(transStatus.equals("True")){
                         %>

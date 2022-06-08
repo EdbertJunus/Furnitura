@@ -1,5 +1,5 @@
 <%@include file="header.jsp" %>
-
+<%@include file="../controller/loginSessionController.jsp" %>
 <section class="content profile">
     <!-- Profile Title -->
     <span class="feature-title">

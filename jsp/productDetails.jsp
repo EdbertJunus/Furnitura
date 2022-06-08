@@ -2,6 +2,11 @@
 
 <div class="productDetails">
   <%
+
+    if( userRole == null || !userRole.equals("Member")){
+        response.sendRedirect("../index.jsp");
+        return;
+    }
     int userId = (Integer)session.getAttribute("userId");
 
     query = String.format("SELECT * FROM furniture JOIN mycart ON furniture.FurnitureId = mycart.FurnitureId WHERE mycart.UserId = %d", userId);

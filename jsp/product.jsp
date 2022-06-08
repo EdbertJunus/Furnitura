@@ -11,10 +11,14 @@
       <%
         String userRole = (String)session.getAttribute("userRole");
 
-        if(userRole != null) {
+        if(userRole != null && userRole.equals("Member")) {
       %>
           <button class="product__btnAddToCart" type="submit">Add to Cart</button>
       <%
+        }else if(userRole != null && userRole.equals("Admin")){
+          %>
+          <button class="product__btnAddToCart" type="button" disabled>You are admin</button>
+          <%
         } else {
       %>
           <button class="product__btnAddToCart" type="button" disabled>Please Login</button>

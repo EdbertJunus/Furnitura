@@ -1,4 +1,6 @@
 <%@include file="header.jsp" %>
+<%@include file="../controller/loginSessionController.jsp" %>
+
     <section class="content transaction">
         <span class="feature-title">
             <h2>Transactions</h2>
@@ -23,7 +25,11 @@
                     <%  
                         //Header already has below variable, so just reuse
                         String email = (String)session.getAttribute("userEmail");
-                        query = String.format("SELECT t.TransactionId, t.TransactionDate, t.TransactionStatus FROM transaction t LEFT JOIN cart c ON t.TransactionId = c.TransactionId LEFT JOIN users u ON c.UserId = u.UserId WHERE u.UserEmail = ('%s')", email);
+                        if(userRole.equals("Admin")){
+                            query = "SELECT * FROM transaction";
+                        }else if(userRole.equals("Member")){
+                            query = String.format("SELECT t.TransactionId, t.TransactionDate, t.TransactionStatus FROM transaction t LEFT JOIN cart c ON t.TransactionId = c.TransactionId LEFT JOIN users u ON c.UserId = u.UserId WHERE u.UserEmail = ('%s')", email);
+                        }
                         rs = con.executeQuery(query);
 
                         int transId = 0;

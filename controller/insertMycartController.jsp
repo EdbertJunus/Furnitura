@@ -33,5 +33,5 @@
     }
   }
 
-  response.sendRedirect("productList.jsp");
+  response.sendRedirect("../jsp/productList.jsp");
 %>

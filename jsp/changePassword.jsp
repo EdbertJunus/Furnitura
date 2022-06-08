@@ -1,4 +1,5 @@
 <%@include file="header.jsp" %>
+<%@include file="../controller/loginSessionController.jsp" %>
 
 <section class="content changepwd">
     <!-- Change Password Title -->

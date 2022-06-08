@@ -11,8 +11,8 @@
     String query = String.format("DELETE FROM mycart WHERE UserId = %d AND FurnitureId = %d", userId, id);
     con.executeUpdate(query);
 
-    response.sendRedirect("productDetails.jsp");
+    response.sendRedirect("../jsp/productDetails.jsp");
   } else {
-    response.sendRedirect("productDetails.jsp");
+    response.sendRedirect("../jsp/productDetails.jsp");
   }
 %>

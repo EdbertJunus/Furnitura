@@ -108,7 +108,7 @@ INSERT INTO `transaction` (`TransactionId`, `TransactionDate`, `TransactionStatu
 (1, '2022-06-03', 'False'),
 (2, '2022-06-05', 'True'),
 (3, '2022-06-07', 'False'),
-(4, '2022-06-08', 'false');
+(4, '2022-06-08', 'False');
 
 -- --------------------------------------------------------
 
