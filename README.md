@@ -1,5 +1,5 @@
 # Furnitura
 
-##### Edbert Junus Yang
+##### Edbert
 ##### Kevin Tan
 ##### Nathanael Jeffrey
